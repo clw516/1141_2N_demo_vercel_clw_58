@@ -1,0 +1,40 @@
+import { createBrowserRouter, RouterProvider } from 'react-router';
+
+import {
+  HomeLayoutPage_58,
+  HomePage_58,
+  BlogStaticPage_58,
+  BlogLocalJsonPage_58,
+  BlogNodePage_58,
+} from './pages';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayoutPage_58 />,
+    children: [
+      {
+        index: true,
+        element: <HomePage_58 />,
+      },
+      {
+        path: 'static_58',
+        element: <BlogStaticPage_58 />,
+      },
+      {
+        path: 'localjson_58',
+        element: <BlogLocalJsonPage_58 />,
+      },
+      {
+        path: 'node_58',
+        element: <BlogNodePage_58 />,
+      },
+    ],
+  },
+]);
+
+const App_58 = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default App_58;
