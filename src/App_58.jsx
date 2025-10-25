@@ -9,6 +9,11 @@ import {
   BookListPage_58,
 } from './pages';
 
+import {
+  T11_ErrorExamplePage_58,
+  T12_UseStateBasicsPage_58,
+} from './pages/tutorials';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -33,6 +38,24 @@ const router = createBrowserRouter([
       {
         path: 'booklist_58',
         element: <BookListPage_58 />,
+      },
+    ],
+  },
+  {
+    path: '/tutorials',
+    element: <HomeLayoutPage_58 />,
+    children: [
+      {
+        index: true,
+        element: <HomePage_58 />,
+      },
+      {
+        path: 't11_xx',
+        element: <T11_ErrorExamplePage_58 />,
+      },
+      {
+        path: 't12_xx',
+        element: <T12_UseStateBasicsPage_58 />,
       },
     ],
   },

@@ -132,8 +132,23 @@ const Navbar_58 = () => {
                   </ul>
                 </div>
               </li>
-              <li className='menu-item'>
-                <Link to='#'>Blog</Link>
+
+              <li className='menu-item dropdown'>
+                <Link to='#'>Tutorials +</Link>
+                <div className='sub-menu-wrapper slideInUp'>
+                  <ul className='sub-menu'>
+                    <li className='menu-item'>
+                      <Link to='/tutorials/t11_xx'>
+                        T11_ErrorExamplePage_58
+                      </Link>
+                    </li>
+                    <li className='menu-item'>
+                      <Link to='/tutorials/t12_xx'>
+                        T12_UseStateBasicsPage_58
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className='menu-item'>
                 <Link to='#'>Contact</Link>
