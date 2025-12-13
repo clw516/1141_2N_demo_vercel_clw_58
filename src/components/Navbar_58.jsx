@@ -140,6 +140,9 @@ function Navbar_58() {
                     <li className='menu-item'>
                       <Link href='/demo/shop_58/node'>W11-ShopNode_58</Link>
                     </li>
+                    <li className='menu-item'>
+                      <Link href='/demo/shop_58/supa'>W12-ShopSupa_58</Link>
+                    </li>
                   </ul>
                 </div>
               </li>

@@ -3,32 +3,34 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 
-import Wrapper from '@/assets/wrappers/midterm/Shop_58';
-import Product_58 from '@/components/midterm/Product_58';
+import Wrapper from '../../_wrapper/Shop_58';
+import Product_58 from '../../_components/Product_58';
+
+import { supabase } from '@/db/clientSupabase';
 
 const FetchShopByCategory_58 = () => {
   const [shop_58, setShop_58] = useState([]);
   const params = useParams();
   const category = params.category;
-  console.log('category', category);
+  // console.log('category', category);
 
-  const fetchShopFromNode = async () => {
+  const fetchShopFromSupabase = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/shop_58/${category}`
-      );
-      const data = await response.json();
-      console.log('shop_58 data', data);
+      let { data, error } = await supabase
+        .from('category2_58')
+        .select('*, shop2_58(*)')
+        .eq('cname', category);
+      console.log('data', data[0].shop2_58);
       if (data.length !== 0) {
-        setShop_58(data);
+        setShop_58(data[0].shop2_58);
       }
-    } catch (error) {
+    } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    fetchShopFromNode();
+    fetchShopFromSupabase();
   }, []);
 
   return (
